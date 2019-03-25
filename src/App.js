@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Welcome from './components/Welcome.js'
+import Navigation from './components/Navigation'
 import Dashboard from './components/Dashboard.js'
 import {Route, Link} from 'react-router-dom'
 
@@ -19,6 +20,7 @@ class App extends Component {
     this.handleSubmit=this.handleSubmit.bind(this)
   }
   componentDidMount(){
+    this.getPatterns()
   }
  
   getPatterns(){
@@ -45,20 +47,17 @@ class App extends Component {
     let newUser = username
     this.setState({usernameInput:newUser})
     this.getPatterns()
-    console.log('patterns', this.state.patterns)
   }
 
   render() {
      return (
       <div className="App">
-        <Welcome handleSubmitFn={this.handleSubmit}/>
-        <nav>
-          <Link to='/dashboard'>Dashboard</Link>
-        </nav>
+        <Navigation patterns={this.state.patterns}/>
+        {/* <Welcome handleSubmitFn={this.handleSubmit}/> */}
 
-        <main>
+        {/* <main>
           <Route path='/dashboard' render={(props)=><Dashboard {...props} patterns={this.state.patterns}/>}/>
-        </main>
+        </main> */}
       </div>
     );
   }
