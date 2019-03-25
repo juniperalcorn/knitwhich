@@ -16,7 +16,6 @@ class App extends Component {
     }
     this.getPatterns=this.getPatterns.bind(this)
     this.handleSubmit=this.handleSubmit.bind(this)
-    // this.listPatterns=this.listPatterns.bind(this)
   }
   componentDidMount(){
   }
@@ -45,18 +44,12 @@ class App extends Component {
     this.setState({usernameInput:username})
     this.getPatterns()
   }
-  // listPatterns(){
-  // let myPatterns=this.state.patterns  
-  //   return myPatterns.map(pattern=><div className='pattern'><div className='patternTitle'><h2>{pattern.title}</h2></div><div className='patternImage'><img src={pattern.small_image_url}/></div><div className='patternAuthor'><h3>{pattern.author_name}</h3></div></div>)
-  // }
+
   render() {
- 
-    // let myPatterns=this.state.patterns
-    // let listPatterns=myPatterns.map(pattern=><div><h2>{pattern.title}</h2><p><img src={pattern.small_image_url}/></p></div>)
-    return (
+     return (
       <div className="App">
         <Welcome handleSubmitFn={this.handleSubmit}/>
-        <Dashboard listFn={this.listPatterns}/>
+        <Dashboard patterns={this.state.patterns}/>
       </div>
     );
   }
