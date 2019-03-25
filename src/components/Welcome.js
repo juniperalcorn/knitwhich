@@ -6,22 +6,22 @@ class Welcome extends Component{
         this.state={
             username:'',
         }
-        this.handleInput=this.handleInput.bind(this)
-        this.handleSubmit=this.handleSubmit.bind(this)
+        // this.handleInput=this.handleInput.bind(this)
+        // this.handleSubmit=this.handleSubmit.bind(this)
     }
-    handleInput=(e)=>{
-        const localValue=e.target.value
-        this.setState({username:localValue})
-    }
-    handleSubmit(e){
-        e.preventDefault()
-        this.props.handleSubmitFn(this.state.username)
-    }
+    // handleInput=(e)=>{
+    //     const localValue=e.target.value
+    //     this.setState({username:localValue})
+    // }
+    // handleSubmit(e){
+    //     e.preventDefault()
+    //     this.props.handleSubmitFn(this.state.username)
+    // }
     render(){
         return(
             <div className='Welcome'>
-                <h1>Welcome</h1>
-                <form onSubmit={this.handleSubmit}>
+                <h1>KnitWhich</h1>
+                {/* <form onSubmit={this.handleSubmit}>
                     <input 
                         onChange={this.handleInput}
                         type='text' 
@@ -33,7 +33,7 @@ class Welcome extends Component{
                         id='submit' 
                         value='Submit'
                     />
-                </form>
+                </form> */}
             </div>
         )
     }

@@ -3,7 +3,10 @@ import './App.css';
 import Welcome from './components/Welcome.js'
 import Navigation from './components/Navigation'
 import Dashboard from './components/Dashboard.js'
+import Tools from './components/Tools.js'
 import {Route, Link} from 'react-router-dom'
+import MyPatterns from './components/MyPatterns.js'
+import Measure from './components/Measure.js'
 
 class App extends Component {
   constructor(props){
@@ -52,12 +55,36 @@ class App extends Component {
   render() {
      return (
       <div className="App">
+        {/* <nav>
+          <h1>nav bar</h1>
+          <Link to='/dashboard'>Dashboard</Link>
+          <Link to='/tools'>Tools</Link>
+          <h1>end nav bar</h1>
+        </nav> */}
         <Navigation patterns={this.state.patterns}/>
-        {/* <Welcome handleSubmitFn={this.handleSubmit}/> */}
+        <Welcome handleSubmitFn={this.handleSubmit}/>
 
-        {/* <main>
-          <Route path='/dashboard' render={(props)=><Dashboard {...props} patterns={this.state.patterns}/>}/>
-        </main> */}
+        <main>
+          <Route
+              path='/'
+          />
+          <Route 
+              path='/tools' 
+              component={Tools}
+          />
+          <Route 
+              path='/dashboard' 
+              render={(props)=><Dashboard {...props} 
+                patterns={this.state.patterns}/>}
+          />
+          <Route 
+              path='/MyPatterns' 
+              render={(props)=><MyPatterns {...props} 
+                  listPatternsFn={this.listPatterns} 
+                  myPatterns={this.state.patterns}/>}
+          />
+          <Route path='/measure' component={Measure}/>
+        </main>
       </div>
     );
   }

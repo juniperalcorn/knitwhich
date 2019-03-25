@@ -6,13 +6,13 @@ class Dashboard extends Component{
     constructor(props){
         super(props)
         this.state={
-            patterns: this.props.myPatterns
+            patterns: this.props.patterns
         }
         this.listPatterns=this.listPatterns.bind(this)
     }
 
     listPatterns(){
-        let myPatterns=this.props.myPatterns
+        let myPatterns=this.props.patterns
         return myPatterns.map(pattern=><div className='pattern'><div className='patternTitle'><h2>{pattern.title}</h2></div><div className='patternImage'><img src={pattern.small_image_url} alt='pattern'/></div><div className='patternAuthor'><h3>{pattern.author_name}</h3></div></div>)
     }
     render(){
@@ -26,15 +26,6 @@ class Dashboard extends Component{
                     <Link to='/MyPatterns'>MyPatterns</Link>
                 </nav>
                 
-                {/* {this.listPatterns()} */}
-                
-                <main>
-                    <Route 
-                        path='/MyPatterns' 
-                        render={(props)=><MyPatterns {...props} listPatternsFn={this.listPatterns}myPatterns={this.state.patterns}/>}
-                    />
-                </main>
-
             </div>
         )
     }

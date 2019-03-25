@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Route, Link} from 'react-router-dom'
 
 class MyPatterns extends Component{
     constructor(props){
@@ -15,7 +16,8 @@ class MyPatterns extends Component{
     render(){
         return(
             <div className='MyPatterns'>
-                {this.props.listPatternsFn()}
+                <p>Anything at all</p>
+                {this.listPatterns()}
             </div>
         )
     }

@@ -9,9 +9,6 @@ class Tools extends Component {
                 <h1>Tools</h1>
                 <Link to='/measure'>Measure</Link>
 
-                <main>
-                    <Route path='/measure' component={Measure}/>
-                </main>
             </div>
         )
     }

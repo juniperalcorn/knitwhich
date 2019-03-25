@@ -6,6 +6,8 @@ class Measure extends Component{
         return(
             <div className='measure'>
                 <h1>Measure</h1>
+                <p>image goes here</p>
+                <p>measure instructions</p>
             </div>
         )
     }
