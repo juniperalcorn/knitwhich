@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Welcome from './components/Welcome.js'
 import Dashboard from './components/Dashboard.js'
+import {Route, Link} from 'react-router-dom'
 
 class App extends Component {
   constructor(props){
@@ -41,15 +42,23 @@ class App extends Component {
   }
 
   handleSubmit=(username)=>{
-    this.setState({usernameInput:username})
+    let newUser = username
+    this.setState({usernameInput:newUser})
     this.getPatterns()
+    console.log('patterns', this.state.patterns)
   }
 
   render() {
      return (
       <div className="App">
         <Welcome handleSubmitFn={this.handleSubmit}/>
-        <Dashboard patterns={this.state.patterns}/>
+        <nav>
+          <Link to='/dashboard'>Dashboard</Link>
+        </nav>
+
+        <main>
+          <Route path='/dashboard' render={(props)=><Dashboard {...props} patterns={this.state.patterns}/>}/>
+        </main>
       </div>
     );
   }
