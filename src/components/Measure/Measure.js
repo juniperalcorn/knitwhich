@@ -25,7 +25,7 @@ class Measure extends Component{
                 <p>Use this 10cm measurement to accurately check your knitting progress!</p>
                 <p>1 inch = 2.54 cm</p>
                 <p>It is not reccomended to use this to measure gauge, because your knitting will cover the screen. However, you can trace this square onto note paper and make your own ruler, and even add inches to the ruler by building blocks next to each other.</p>
-                <p>For thorough gauge instructions, check out this <a href='https://www.wikihow.com/Measure-Knit-Gauge'>Wiki How Page.</a></p>
+                <p>For thorough gauge instructions, check out this<a href='https://www.wikihow.com/Measure-Knit-Gauge'>Wiki How Page.</a></p>
             </div>
         )
     }

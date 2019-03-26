@@ -3,7 +3,7 @@
 .App {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  margin-bottom: 20px;
   width: 100%;
 }
 .Navigation{
@@ -27,7 +27,6 @@ a{
   justify-content: center;
   height: 15%;
   margin-bottom: 1%;
-  border: 1px solid black;
 }
 h1{
   font-family: 'Megrim', cursive;
@@ -41,10 +40,9 @@ h2{
 .Dashboard{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 70vh;
+  justify-content: flex-start;
+  height: 50vh;
   margin: 0 20%;
-  border: 1px solid black;
   align-items: center;
 }
 .DashboardTitle{
@@ -57,8 +55,9 @@ h2{
   flex-direction: column;
   justify-content: center;
   height: 80%;
-  margin: 5% 20% 0 20%;
-  border: 1px solid black;
+  width: 60%;
+  margin: 4% 20% 0 20%;
+  border-top: 1px solid black;
   align-items: center;
   overflow: auto;
 }
@@ -68,6 +67,7 @@ h2{
   height: 120px;
   border: 1px solid pink;
   width: 100%;
+  margin: 2px;
   justify-content: space-between;
 }
 img{
@@ -113,7 +113,7 @@ h3{
   margin-top: 5cm;
 }
 p{
-  margin: 10px 20px;
+  margin: 10px 100px;
   text-align: justify;
 }
 .Needles{
