@@ -7,6 +7,8 @@ import Tools from './components/Tools.js'
 import {Route, Link} from 'react-router-dom'
 import MyPatterns from './components/MyPatterns.js'
 import Measure from './components/Measure.js'
+import Needles from './components/Needles.js'
+import MyStash from './components/MyStash.js'
 
 class App extends Component {
   constructor(props){
@@ -14,8 +16,8 @@ class App extends Component {
     this.state={
       patterns:[],
       usernameInput:'jawdry',
-      isLoading: true,
-      message: '',
+      needles:[],
+      stash:[],
       authUsername:'0caa57646dca474808adf9cd2e8c366a',
       authPassword:'CSH4Rxh0NDYuze7pF9Cl313wLiWzpDXyd1aeoW-S',
     }
@@ -24,6 +26,7 @@ class App extends Component {
   }
   componentDidMount(){
     this.getPatterns()
+    this.getNeedles()
   }
  
   getPatterns(){
@@ -38,12 +41,38 @@ class App extends Component {
       return response.json()
       })
     .then(jsonData=>{
-      this.setState({isLoading: true, patterns:jsonData.volumes})
+      this.setState({patterns:jsonData.volumes})
     })
-    .catch(error=>this.setState({
-      isLoading: false,
-      message: 'Still working on ' +error
-    }))
+  }
+  getNeedles(){
+    let url=`https://api.ravelry.com/people/jawdry/needles/list.json`
+    fetch(url,{
+      method: 'GET',
+      headers:{
+        'Authorization': 'Basic ' + btoa(this.state.authUsername+':'+this.state.authPassword),
+      }
+    })
+    .then(response=>{
+      return response.json()
+    })
+    .then(jsonData=>{
+      this.setState({needles:jsonData.needle_records})
+    })
+  }
+  getStash(){
+    let url = `https://api.ravelry.com/people/jawdry/stash/list.json`
+    fetch(url,{
+      method: 'GET',
+      headers:{
+        'Authorization': 'Basic ' + btoa(this.state.authUsername+':'+this.state.authPassword),
+      }
+    })
+    .then(response=>{
+      return response.json()
+    })
+    .then(jsonData=>{
+      this.setState({stash:jsonData.stash})
+    })
   }
 
   handleSubmit=(username)=>{
@@ -61,7 +90,7 @@ class App extends Component {
           <Link to='/tools'>Tools</Link>
           <h1>end nav bar</h1>
         </nav> */}
-        <Navigation patterns={this.state.patterns}/>
+        <Navigation />
         <Welcome handleSubmitFn={this.handleSubmit}/>
 
         <main>
@@ -83,7 +112,21 @@ class App extends Component {
                   listPatternsFn={this.listPatterns} 
                   myPatterns={this.state.patterns}/>}
           />
-          <Route path='/measure' component={Measure}/>
+          <Route 
+              path='/measure' 
+              component={Measure}
+          />
+          <Route 
+              path='/needles' 
+              render={(props)=><Needles {...props} 
+              needles={this.state.needles}/>}
+          />
+          <Route 
+              path='/mystash'
+              render={(props)=><MyStash {...props}
+              stash={this.state.stash}
+              />}
+          />
         </main>
       </div>
     );

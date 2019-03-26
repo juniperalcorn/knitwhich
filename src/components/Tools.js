@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {Route, Link} from 'react-router-dom'
-import Measure from './Measure'
 
 class Tools extends Component {
     render(){
@@ -8,6 +7,7 @@ class Tools extends Component {
             <div className='Tools'>
                 <h1>Tools</h1>
                 <Link to='/measure'>Measure</Link>
+                <Link to='/needles'>My Needles</Link>
 
             </div>
         )

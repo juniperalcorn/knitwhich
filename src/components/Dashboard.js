@@ -23,7 +23,8 @@ class Dashboard extends Component{
                 </div>
                
                 <nav>
-                    <Link to='/MyPatterns'>MyPatterns</Link>
+                    <Link to='/MyPatterns'>My Patterns</Link>
+                    <Link to='/mystash'>My Stash</Link>
                 </nav>
                 
             </div>
