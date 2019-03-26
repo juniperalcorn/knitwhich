@@ -1,9 +1,5 @@
 import React, {Component} from 'react'
-import {Route, Link} from 'react-router-dom'
-import Welcome from './Welcome'
-import Dashboard from './Dashboard'
-import Tools from './Tools'
-import App from '../App'
+import {Link} from 'react-router-dom'
 
 class Navigation extends Component {
     render(){

@@ -9,6 +9,7 @@ import MyPatterns from './components/MyPatterns.js'
 import Measure from './components/Measure.js'
 import Needles from './components/Needles.js'
 import MyStash from './components/MyStash.js'
+import { timingSafeEqual } from 'crypto';
 
 class App extends Component {
   constructor(props){
@@ -23,6 +24,8 @@ class App extends Component {
     }
     this.getPatterns=this.getPatterns.bind(this)
     this.handleSubmit=this.handleSubmit.bind(this)
+    this.getStash=this.getStash.bind(this)
+    this.getNeedles=this.getNeedles.bind(this)
   }
   componentDidMount(){
     this.getPatterns()
@@ -79,17 +82,12 @@ class App extends Component {
     let newUser = username
     this.setState({usernameInput:newUser})
     this.getPatterns()
+    this.getStash()
   }
 
   render() {
      return (
       <div className="App">
-        {/* <nav>
-          <h1>nav bar</h1>
-          <Link to='/dashboard'>Dashboard</Link>
-          <Link to='/tools'>Tools</Link>
-          <h1>end nav bar</h1>
-        </nav> */}
         <Navigation />
         <Welcome handleSubmitFn={this.handleSubmit}/>
 

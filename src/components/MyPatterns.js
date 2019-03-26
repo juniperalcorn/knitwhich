@@ -6,12 +6,9 @@ class MyPatterns extends Component{
         super(props)
         this.listPatterns=this.listPatterns.bind(this)
     }
-    // componentDidMount(){
-    //     this.listPatterns()
-    // }
     listPatterns(){
         let myPatterns=this.props.myPatterns
-        return myPatterns.map(pattern=><div className='pattern'><div className='patternTitle'><h3>{pattern.title}</h3></div><div className='patternImage'><img src={pattern.small_image_url} alt='pattern'/></div><div className='patternAuthor'><h3>{pattern.author_name}</h3></div></div>)
+        return myPatterns.map(pattern=><div className='pattern' key={pattern.id}><div className='patternTitle'><h3>{pattern.title}</h3></div><div className='patternImage'><img src={pattern.small_image_url} alt='pattern'/></div><div className='patternAuthor'><h3>{pattern.author_name}</h3></div></div>)
     }
     render(){
         return(
