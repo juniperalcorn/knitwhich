@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Route, Link} from 'react-router-dom'
-import '../styles/Measure.css';
+import './Measure.css';
 
 class Measure extends Component{
 

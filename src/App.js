@@ -6,10 +6,10 @@ import Dashboard from './components/Dashboard.js'
 import Tools from './components/Tools.js'
 import {Route, Link} from 'react-router-dom'
 import MyPatterns from './components/MyPatterns.js'
-import Measure from './components/Measure.js'
+import Measure from './components/Measure/Measure.js'
 import Needles from './components/Needles.js'
 import MyStash from './components/MyStash.js'
-import { timingSafeEqual } from 'crypto';
+import Counter from './components/Counter/Counter'
 
 class App extends Component {
   constructor(props){
@@ -124,6 +124,10 @@ class App extends Component {
               render={(props)=><MyStash {...props}
               stash={this.state.stash}
               />}
+          />
+          <Route 
+              path='/counter'
+              component={Counter}
           />
         </main>
       </div>
