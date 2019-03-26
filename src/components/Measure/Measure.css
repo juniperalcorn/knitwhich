@@ -1,7 +1,7 @@
-.measure{
+/* .measure{
     display: flex;
     flex-direction: column;
-   
+    justify-content: center;
 }
 .inch-measurement{
     display: flex;
@@ -34,4 +34,4 @@
 .cm-height{
     margin-left: -5cm;
     margin-top: 5cm;
-}
+} */

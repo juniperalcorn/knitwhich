@@ -7,7 +7,7 @@ class Measure extends Component{
     render(){
         return(
             <div className='measure'>
-                <h1>Measure</h1>
+                <h2>Measure</h2>
                 
                 {/* <p>2 inches</p>
                 <div className='inch-measurement'>

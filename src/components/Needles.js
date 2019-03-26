@@ -13,7 +13,7 @@ class Needles extends Component{
     render(){
         return(
             <div className='Needles'>
-                <h1>needles</h1>
+                <h2>Needle Library</h2>
                 {this.listNeedles()}
             </div>
         )

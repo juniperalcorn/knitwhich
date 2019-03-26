@@ -1,33 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Almendra+Display|Londrina+Outline|Megrim|Raleway+Dots');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans');
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+.Navigation{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-left: 10%;
+  height: 12%;
+  padding-top: 20px;
+}
+a{
+  text-align: center;
+  margin: 10px;
+  text-decoration: none;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 18px;
+}
+.Welcome{
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 15%;
+  margin-bottom: 1%;
+  border: 1px solid black;
+}
+h1{
+  font-family: 'Megrim', cursive;
+  font-size: 60px;
+  margin-top:0;
+}
+h2{
+  font-family: 'Megrim', cursive;
+  font-size: 30px;
+}
+.Dashboard{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+  margin: 0 20%;
+  border: 1px solid black;
+  align-items: center;
+}
+.DashboardTitle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.MyPatterns{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+  margin: 5% 20% 0 20%;
+  border: 1px solid black;
+  align-items: center;
+  overflow: auto;
+}
+.pattern{
+  display: flex;
+  flex-direction: row;
+  height: 120px;
+  border: 1px solid pink;
+  width: 100%;
+  justify-content: space-between;
+}
+img{
+  height: 120px;
+  object-fit: scale-down;
+  border-radius: 15px;
+}
+h3{
+  font-family: 'Alegreya Sans', sans-serif;
+}
+.Tools{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+  margin: 5% 20% 0 20%;
+  border: 1px solid black;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.measure{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  margin: 50px 10% 30px 10%;
+}
+.cm-measurement{
+  display: flex;
+  align-self: center;
+  height: 10cm;
+  width: 10cm;
+  background-color: grey;
+  border: 1px solid black;
+}
+.cm-length{
+  margin-left: 5cm;
+  margin-top: 9.5cm;
+}
+.cm-height{
+  margin-left: -5cm;
+  margin-top: 5cm;
+}
+p{
+  margin: 10px 20px;
+  text-align: justify;
+}
+.Needles{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+  margin: 5% 20% 0 20%;
+  border: 1px solid black;
+  align-items: center;
+  overflow: auto;
+}
+.needle{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  border: 1px solid pink;
+  width: 99%;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* font-family: 'Raleway Dots', cursive;
+font-family: 'Megrim', cursive;
+font-family: 'Londrina Outline', cursive;
+font-family: 'Almendra Display', cursive; */

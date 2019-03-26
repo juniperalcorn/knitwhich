@@ -10,12 +10,11 @@ class Dashboard extends Component{
         return(
             <div className='Dashboard'>
                 <div className='DashboardTitle'>
-                    <h1>Dashboard</h1>
+                    <h2>Dashboard</h2>
                 </div>
                
                 <nav>
                     <Link to='/MyPatterns'>My Patterns</Link>
-                    {/* <Link to='/mystash'>My Stash</Link> */}
                 </nav>
                 
             </div>

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { NONAME } from 'dns';
 
 class RowCounter extends Component {
     constructor(props){
@@ -24,10 +25,11 @@ class RowCounter extends Component {
     handleSubmit(e){
         e.preventDefault()
     }
+ 
     render(){
         let counter=this.props.count
         return(
-            <div className='singleCounter'>
+            <div className='rowCounter'>
                 <form onSubmit={this.handleSubmit}>
                     <input 
                         onChange={this.handleChange}
@@ -36,12 +38,13 @@ class RowCounter extends Component {
                     />
                     <button type='submit'>Submit</button>
                 </form>
-             
-                <p>{this.state.projectTitle}</p>
-                
-                <button onClick={this.decreaseCount}>-</button>
-                {counter}
-                <button onClick={this.increaseCount}>+</button>
+                <div className='singleRowCounter'>
+                    <p>{this.state.projectTitle}</p>
+
+                    <button onClick={this.decreaseCount}>-</button>
+                        {counter}
+                    <button onClick={this.increaseCount}>+</button>
+                </div>
             </div>
         )
     }
