@@ -6,7 +6,6 @@ class Container extends Component{
     constructor(props){
         super(props)
         this.state={
-            counterCount:[],
             projectTitles:['socks','sweater','blanket','scarf'],
         }
         this.updateProjectTitle=this.updateProjectTitle.bind(this)
@@ -20,7 +19,7 @@ class Container extends Component{
     render(){
         return(
             <div className='Container'>
-                <h1>container test</h1>
+                <h2>Project Row Counters</h2>
                 <InputProject updateProjectFn={this.updateProjectTitle}/>
                 <ListProjects projects={this.state.projectTitles}/>
             </div>

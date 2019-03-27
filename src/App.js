@@ -8,7 +8,6 @@ import {Route, Link} from 'react-router-dom'
 import MyPatterns from './components/MyPatterns.js'
 import Measure from './components/Measure/Measure.js'
 import Needles from './components/Needles.js'
-import Counter from './components/Counter/Counter'
 import Container from './components/RowCount/Container.js'
 
 class App extends Component {
@@ -118,10 +117,6 @@ class App extends Component {
               path='/needles' 
               render={(props)=><Needles {...props} 
               needles={this.state.needles}/>}
-          />
-          <Route 
-              path='/counter'
-              component={Counter}
           />
           <Route 
               path='/rowCount'
