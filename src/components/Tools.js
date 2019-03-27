@@ -8,7 +8,8 @@ class Tools extends Component {
                 <h2>Tools</h2>
                 <Link to='/measure'>Measure</Link>
                 <Link to='/needles'>My Needles</Link>
-                <Link to='/counter'>Row Counter</Link>
+                {/* <Link to='/counter'>Row Counter</Link> */}
+                <Link to='/rowCount'>My Row Counters</Link>
             </div>
         )
     }

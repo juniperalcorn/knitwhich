@@ -9,6 +9,7 @@ import MyPatterns from './components/MyPatterns.js'
 import Measure from './components/Measure/Measure.js'
 import Needles from './components/Needles.js'
 import Counter from './components/Counter/Counter'
+import Container from './components/RowCount/Container.js'
 
 class App extends Component {
   constructor(props){
@@ -121,6 +122,10 @@ class App extends Component {
           <Route 
               path='/counter'
               component={Counter}
+          />
+          <Route 
+              path='/rowCount'
+              component={Container}
           />
         </main>
       </div>
