@@ -10,7 +10,7 @@ class MyPatterns extends Component{
     }
     listPatterns(){
         let myPatterns=this.props.myPatterns
-        return myPatterns.map(pattern=><div className='pattern' key={pattern.id}><div className='patternImage'><img src={pattern.small_image_url || Photo} alt='yarn icon'/></div><div className='patternTitle'><h3>{pattern.title}</h3></div><div className='patternAuthor'><h3>{pattern.author_name}</h3></div></div>)
+        return myPatterns.map(pattern=><div className='pattern' key={pattern.id}><div className='patternImage'><img src={pattern.small_image_url || Photo} alt='yarn icon'/></div><div className='patternTitle'>{pattern.title}</div><div className='patternAuthor'>{pattern.author_name}</div></div>)
     }
     render(){
         return(

@@ -27,6 +27,7 @@ a{
   justify-content: center;
   height: 15%;
   margin-bottom: 1%;
+  margin-top:5%;
 }
 h1{
   font-family: 'Megrim', cursive;
@@ -70,6 +71,17 @@ h2{
   margin: 2px;
   justify-content: space-between;
 }
+.patternTitle{
+  margin-top: 5%;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+.patternAuthor{
+  margin-top: 5%;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 20px;
+}
 img{
   height: 120px;
   object-fit: scale-down;
@@ -83,8 +95,7 @@ h3{
   flex-direction: column;
   justify-content: center;
   height: 80%;
-  margin: 5% 20% 0 20%;
-  border: 1px solid black;
+  margin: 0% 20% 0 20%;
   align-items: center;
   padding-bottom: 10px;
 }
