@@ -7,16 +7,15 @@ class Container extends Component{
         super(props)
         this.state={
             counterCount:[],
-            projectTitles:[],
+            projectTitles:['socks','sweater','blanket','scarf'],
         }
         this.updateProjectTitle=this.updateProjectTitle.bind(this)
     }
     updateProjectTitle(input){
-        let newProj=input
         let projTitle=this.state.projectTitles
         projTitle.push(input)
         this.setState({projectTitles:projTitle})
-        console.log(this.state.projectTitles)
+        console.log('updating input:', input)
     }
     render(){
         return(
