@@ -6,15 +6,27 @@ class Container extends Component{
     constructor(props){
         super(props)
         this.state={
-            projectTitles:['socks','sweater','blanket','scarf'],
+            projectTitles:[],
         }
         this.updateProjectTitle=this.updateProjectTitle.bind(this)
+    }
+    componentDidMount(){
+        // localStorage.clear()
+        let storage = localStorage.getItem('projectTitles')
+        if (storage===null){
+            storage=[]
+        } else {
+            let returnStorage = storage.split(',')
+            this.setState({projectTitles:returnStorage})
+            console.log('return storage', returnStorage)
+        }
+        console.log('storage', storage)
     }
     updateProjectTitle(input){
         let projTitle=this.state.projectTitles
         projTitle.push(input)
         this.setState({projectTitles:projTitle})
-        console.log('updating input:', input)
+        localStorage.setItem('projectTitles', this.state.projectTitles)
     }
     render(){
         return(

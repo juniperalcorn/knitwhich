@@ -147,6 +147,32 @@ p{
   align-items: center;
   font-family: 'Alegreya Sans', sans-serif;
 }
+.Container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+  margin: 0% 20% 0 20%;
+  border: 1px solid black;
+  align-items: center;
+  overflow: auto;
+}
+input{
+  border-radius: 15px;
+  height: 30px;
+}
+button{
+  border-radius: 15px;
+  height: 30px;
+}
+.projectList{
+  margin-top: 20px;
+
+}
+.projectCounter{
+  display: flex;
+  flex-direction: row;
+}
 
 /* font-family: 'Raleway Dots', cursive;
 font-family: 'Megrim', cursive;
