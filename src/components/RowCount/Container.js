@@ -10,15 +10,16 @@ class Container extends Component{
             projectCounters:[],
         }
         this.updateProjectTitle=this.updateProjectTitle.bind(this)
+        // this.parseStorage=this.parseStorage.bind(this)
     }
     componentDidMount(){
         // localStorage.clear()
-        let storage = localStorage.getItem('projectTitles')
+        let storage = localStorage.getItem('projects')
         if (storage===null){
             storage=[]
         } else {
-            let returnStorage = storage.split(',')
-            this.setState({projectTitles:returnStorage})
+            let newStorage = JSON.parse(storage)
+            this.setState({projectTitles:newStorage})
         }
     }
     updateProjectTitle(input){
@@ -30,10 +31,10 @@ class Container extends Component{
             projContainer['count']=0
             return projContainer
         })
-        addProject.push(projCounter)
+        addProject.push(projCounter[0])
         this.setState({projectTitles:addProject})
         console.log('project titles', this.state.projectTitles)
-        localStorage.setItem('projects', this.state.projectTitles)
+       localStorage.setItem('projects', JSON.stringify(this.state.projectTitles))
     }
     render(){
         return(

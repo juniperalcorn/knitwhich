@@ -15,8 +15,8 @@ class ListProjects extends Component{
     listProjects(){
         const {projects}=this.props
         return projects.map((project, index)=>
-            <div className='projectCounter' key={index}><h3>{project[0].title}</h3>
-            <RowCounter count={project[0].count}/>
+            <div className='projectCounter' key={index}><h3>{project.title}</h3>
+            <RowCounter count={project.count}/>
             </div>)
     }
     render(){
