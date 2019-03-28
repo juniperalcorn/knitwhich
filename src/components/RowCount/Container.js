@@ -7,6 +7,7 @@ class Container extends Component{
         super(props)
         this.state={
             projectTitles:[],
+            projectCounters:[],
         }
         this.updateProjectTitle=this.updateProjectTitle.bind(this)
     }
@@ -21,10 +22,18 @@ class Container extends Component{
         }
     }
     updateProjectTitle(input){
-        let projTitle=this.state.projectTitles
-        projTitle.push(input)
-        this.setState({projectTitles:projTitle})
-        localStorage.setItem('projectTitles', this.state.projectTitles)
+        let addProject=this.state.projectTitles
+        let projArray=[input]
+        let projCounter=projArray.map(element=>{
+            const projContainer={}
+            projContainer ['title'] =element
+            projContainer['count']=0
+            return projContainer
+        })
+        addProject.push(projCounter)
+        this.setState({projectTitles:addProject})
+        console.log('project titles', this.state.projectTitles)
+        localStorage.setItem('projects', this.state.projectTitles)
     }
     render(){
         return(
