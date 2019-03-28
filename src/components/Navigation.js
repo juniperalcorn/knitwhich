@@ -9,7 +9,6 @@ function Navigation(){
                     <Link to='/MyPatterns'>My Patterns</Link>
                     <Link to='/tools'>Tools</Link>
                 </nav>
-
             </div>
         )
     }

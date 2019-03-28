@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import './Measure.css';
 
 class Measure extends Component{
 
@@ -7,12 +6,6 @@ class Measure extends Component{
         return(
             <div className='measure'>
                 <h2>Measure</h2>
-                
-                {/* <p>2 inches</p>
-                <div className='inch-measurement'>
-                    <div className='length'>|</div>
-                    <div className='height'>--</div>
-                </div> */}
 
                 <p>10 centimeters</p>
                 <div className='cm-measurement'>
