@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Route, Link} from 'react-router-dom'
 import Photo from '../Assets/yarn_icon.png'
+//photo from vecteezy
 
 class MyPatterns extends Component{
     constructor(props){
