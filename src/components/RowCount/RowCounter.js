@@ -11,18 +11,21 @@ class RowCounter extends Component {
         this.increaseCount=this.increaseCount.bind(this)
     }
     componentDidMount(){
-        // let countStore=localStorage.getItem('count')
-        // this.setState({counter:countStore})
+        
     }
     decreaseCount(){
-        let count=this.state.counter
-        count--
-        this.setState({counter: count})
+        this.props.decreaseFn(this.props.count)
+        // let count=this.state.counter
+        // count--
+        // this.setState({counter: count})
+        // console.log('decrease', this.state.counter)
     }
     increaseCount(){
-        let count=this.state.counter
-        count++
-        this.setState({counter:count})
+        this.props.increaseFn(this.props.count)
+        // let count=this.state.counter
+        // count++
+        // this.setState({counter:count})
+        // console.log('increase', this.state.counter)
     }
  
     render(){
