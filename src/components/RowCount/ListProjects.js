@@ -1,21 +1,23 @@
 import React, {Component} from 'react'
 import RowCounter from './RowCounter'
-import { timingSafeEqual } from 'crypto';
 
 class ListProjects extends Component{
     constructor(props){
         super(props)
         this.state={
-            newCount:0,
         }
         this.listProjects=this.listProjects.bind(this)
     }
     componentDidMount(){
         this.listProjects()
     }
+
     listProjects(){
         const {projects}=this.props
-        return projects.map((project, index)=><div className='projectCounter'><h3 key={index}>{project}</h3><RowCounter newCount={this.state.newCount}/></div>)
+        return projects.map((project, index)=>
+            <div className='projectCounter' key={index}><h3>{project.title}</h3>
+            <RowCounter id={index} increaseFn={(id)=>this.props.increaseFn(id)} decreaseFn={(id)=>this.props.decreaseFn(id)} count={project.count}/>
+            </div>)
     }
     render(){
         return(
