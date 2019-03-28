@@ -9,20 +9,21 @@ import Measure from './components/Measure/Measure.js'
 import Needles from './components/Needles.js'
 import Container from './components/RowCount/Container.js'
 
+const authUsername= process.env.REACT_APP_BASIC_AUTH_USERNAME
+const authPassword= process.env.REACT_APP_BASIC_AUTH_PASSWORD
+
 class App extends Component {
   constructor(props){
     super(props)
     this.state={
       patterns:[],
-      usernameInput:'jawdry',
       needles:[],
       stash:[],
-      authUsername:'0caa57646dca474808adf9cd2e8c366a',
-      authPassword:'CSH4Rxh0NDYuze7pF9Cl313wLiWzpDXyd1aeoW-S',
+      authUsername: authUsername,
+      authPassword: authPassword
     }
     this.getPatterns=this.getPatterns.bind(this)
     this.handleSubmit=this.handleSubmit.bind(this)
-    this.getStash=this.getStash.bind(this)
     this.getNeedles=this.getNeedles.bind(this)
   }
   componentDidMount(){
@@ -31,11 +32,11 @@ class App extends Component {
   }
  
   getPatterns(){
-    let url = `https://api.ravelry.com/people/${this.state.usernameInput}/library/search.json`
+    let url = `https://api.ravelry.com/people/jawdry/library/search.json`
     fetch(url, {
       method: 'GET',
       headers:{
-        'Authorization': 'Basic ' + btoa(this.state.authUsername+':'+this.state.authPassword),
+        'Authorization': 'Basic ' + btoa(authUsername+':'+authPassword),
       }
     })
     .then(response=>{
@@ -58,21 +59,6 @@ class App extends Component {
     })
     .then(jsonData=>{
       this.setState({needles:jsonData.needle_records})
-    })
-  }
-  getStash(){
-    let url = `https://api.ravelry.com/people/jawdry/stash/list.json`
-    fetch(url,{
-      method: 'GET',
-      headers:{
-        'Authorization': 'Basic ' + btoa(this.state.authUsername+':'+this.state.authPassword),
-      }
-    })
-    .then(response=>{
-      return response.json()
-    })
-    .then(jsonData=>{
-      this.setState({stash:jsonData.stash})
     })
   }
 

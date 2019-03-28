@@ -133,7 +133,7 @@ p{
   justify-content: center;
   height: 80%;
   margin: 5% 20% 0 20%;
-  border: 1px solid black;
+  border-top: 1px solid black;
   align-items: center;
   overflow: auto;
 }
@@ -142,7 +142,8 @@ p{
   flex-direction: row;
   height: 50px;
   border: 1px solid pink;
-  width: 99%;
+  margin: 1px;
+  width: 90%;
   justify-content: center;
   align-items: center;
   font-family: 'Alegreya Sans', sans-serif;
@@ -163,12 +164,21 @@ p{
 input{
   border-radius: 15px;
   height: 30px;
+  font-family: 'Alegreya Sans', sans-serif;
+  text-align: center;
+  font-size: 12px;
+}
+input:focus{
+  background-color: lightpink;
 }
 button{
   border-radius: 15px;
   height: 30px;
   margin-left: 20px;
   margin-right: 20px;
+}
+button:focus{
+  background-color: lightpink;
 }
 .ProjectList{
   display: flex;
