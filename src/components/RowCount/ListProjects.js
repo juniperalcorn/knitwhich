@@ -16,7 +16,7 @@ class ListProjects extends Component{
         const {projects}=this.props
         return projects.map((project, index)=>
             <div className='projectCounter' key={index}><h3>{project.title}</h3>
-            <RowCounter increaseFn={this.props.increaseFn} decreaseFn={this.props.decreaseFn} count={project.count}/>
+            <RowCounter id={index} increaseFn={(id)=>this.props.increaseFn(id)} decreaseFn={(id)=>this.props.decreaseFn(id)} count={project.count}/>
             </div>)
     }
     render(){

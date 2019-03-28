@@ -39,36 +39,40 @@ class Container extends Component{
     }
      decreaseCount(id){
         this.setState(prevState=>{
-          let newState = prevState.count.map((element,i)=>{
+          let newState = prevState.projectTitles.map((element,i)=>{
+            let newCount=element.count
             if(i===id){
-              element= element-1
+              newCount= element.count-1
             }
-            return element
+            return {title:element.title, count:newCount}
           })
           return{
-            count:newState
+            projectTitles:newState
           }
         })
+        localStorage.setItem('projects', JSON.stringify(this.state.projectTitles))
       }
       increaseCount(id){
         this.setState(prevState=>{
-          let newState = prevState.count.map((element,i)=>{
+          let newState = prevState.projectTitles.map((element,i)=>{
+            let newCount=element.count
             if(i===id){
-              element= element+1
+              newCount= element.count+1
             }
-            return element
+            return {title:element.title, count:newCount}
           })
           return{
-            count:newState
+            projectTitles:newState
           }
         })
+        localStorage.setItem('projects', JSON.stringify(this.state.projectTitles))
       }
     render(){
         return(
             <div className='Container'>
                 <h2>Project Row Counters</h2>
                 <InputProject updateProjectFn={this.updateProjectTitle}/>
-                <ListProjects projects={this.state.projectTitles} decreaseFn={this.decreaseCount} increaseFn={this.increaseCount}/>
+                <ListProjects projects={this.state.projectTitles} decreaseFn={(id)=>this.decreaseCount(id)} increaseFn={(id)=>this.increaseCount(id)}/>
             </div>
         )
     }
