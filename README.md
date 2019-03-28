@@ -1,5 +1,5 @@
 # KnitWhich
-A Knitting Utilities and Ravelry Extension App: HTML, CSS, JSX, React.
+A Knitting Utilities and Ravelry Extension App: HTML, CSS, JSX, React.<br/>
 
 Take a look at [KnitWhich] (#).
 
@@ -13,6 +13,7 @@ From the Ravelry API, KnitWhich lists a user's Ravelry library, and lists the pa
 In addition, KnitWhich offers two utilities: an accurate 10cm x 10cm ruler (accurate on mobile, tablet, and computer screens). This helps knitters to keep track of their progress or create their own ruler on the fly. There is also a Row Counters component, where users can add and label row counters for different projects, eliminating the need for easily misplaced notions.
 
 ### Wireframes
+View the [KnitWhich Wireframes](https://drive.google.com/file/d/1hKV2S8epQ7l7rKentwiL8UDEaLZG9ixx/view?usp=sharing).
 
 ### MVP and PostMVP
 #### MVP 
@@ -90,5 +91,3 @@ Below is an example of code from the Row Counter Container component. It is sign
         })
         localStorage.setItem('projects', JSON.stringify(this.state.projectTitles))
       }
-
-### User Stories
