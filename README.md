@@ -1,5 +1,5 @@
 # KnitWhich
-A Knitting Utilities and Ravelry Extension App
+A Knitting Utilities and Ravelry Extension App: HTML, CSS, JSX, React
 Take a look at [KnitWhich] (#).
 
 ## Project Description
@@ -15,52 +15,52 @@ In addition, KnitWhich offers two utilities: an accurate 10cm x 10cm ruler (accu
 
 ### MVP and PostMVP
 #### MVP 
-MVP for KnitWhich is accessing the Ravelry API to list the user's current library and needle stash, and providing functional tools for the modern knitter.
+- Use the Ravelry API to list user's pattern library and knitting needle collection.
+- Render API data on different pages using React component structure.
+- Display an accurate 10cm measure for projects.
+- List row counters for unique projects, labeled by the user, and save accurate row count
+
 #### PostMVP
-KnitWhich has incredible potential to expand, offering a seamless mobile experience of Ravelry's expansive services. Top PostMVP goals for KnitWhich include expanded API access to allow any user to access their Ravelry user data. This will entail a log-in and back-end development. Additionally, users will be able to update their Needle Library through a link to an Add Needle component: using forms and an API Post, users can set and send data for a new set of needles. Finally, users will be able to download actual patterns from their Ravelry library (those that they have access to), and view them through the KnitWhich app without needing to log into the Ravelry website through a browser, or use other document viewing apps.
+KnitWhich has incredible potential to expand, offering a seamless mobile experience of Ravelry's expansive services. 
+- Add user authorization for any Ravelry user.
+- Post new knitting needle data to API using forms. 
 
 ### React Component Hierarchy
+From the App, users view the Navigation Bar and site title on every page. Through navigation, users can access a list of their Ravelry patterns, or the Tools page, where they can then select to view the measurement tool, a list of their needles, or access row counters for their projects. The Row Counter page uses three components: an input component for creating a new, labeled counter; a counter component; and a list projects component which maps through labeled counters and generates unique counters.
+App>Navigation
+        >Home
+        >My Patterns
+        >Tools  
+            >Measure
+            >My Needles
+            >My Row Counters
+                >Form
+                >Counter
+                >List Projects
 
 ### Functional Components
+Main functional components are My Patterns, My Needles, and Row Counting components.
 
 ### Helper Functions
 
 ### Code Snippet
+Below is an example of code from the Row Counter Container component. It is significant for demonstrating the use of local storage in creating and updating row counters. Note that local storage is set in the lower function, and called in componentDidMount. ComponentDidMount utilizes a conditional statement to make sense of the storage data for React: if nothing has been stored yet, it is set to an empty array so that the page will render without an error. If previous data is being called up, it is produced as a single string--therefore the string split method converts the stored data into an array which can be accurately mapped on the List Projects component. ComponentDidMount also contains the localstorage "clear" function as commented out--not deleted-- code in case storage needs a hard reset. 
 
-### User Stores
+    componentDidMount(){
+        // localStorage.clear()
+        let storage = localStorage.getItem('projectTitles')
+        if (storage===null){
+            storage=[]
+        } else {
+            let returnStorage = storage.split(',')
+            this.setState({projectTitles:returnStorage})
+        }
+    }
+    updateProjectTitle(input){
+        let projTitle=this.state.projectTitles
+        projTitle.push(input)
+        this.setState({projectTitles:projTitle})
+        localStorage.setItem('projectTitles', this.state.projectTitles)
+    }
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
+### User Stories

@@ -1,18 +1,16 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 
-class Navigation extends Component {
-    render(){
+function Navigation(){
         return(
             <div className='Navigation'>
                 <nav>
-                    <Link to ='/home'>Home</Link>
-                    <Link to='/dashboard'>Dashboard</Link>
+                    <Link to ='/'>Home</Link>
+                    <Link to='/MyPatterns'>My Patterns</Link>
                     <Link to='/tools'>Tools</Link>
                 </nav>
 
             </div>
         )
     }
-}
 export default Navigation

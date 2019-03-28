@@ -18,9 +18,7 @@ class Container extends Component{
         } else {
             let returnStorage = storage.split(',')
             this.setState({projectTitles:returnStorage})
-            console.log('return storage', returnStorage)
         }
-        console.log('storage', storage)
     }
     updateProjectTitle(input){
         let projTitle=this.state.projectTitles

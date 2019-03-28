@@ -153,9 +153,12 @@ p{
   justify-content: center;
   height: 80%;
   margin: 0% 20% 0 20%;
-  border: 1px solid black;
   align-items: center;
   overflow: auto;
+  border-top: 1px solid black;
+}
+.ProjectInput{
+  margin-bottom: 20px;
 }
 input{
   border-radius: 15px;
@@ -164,14 +167,30 @@ input{
 button{
   border-radius: 15px;
   height: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-.projectList{
-  margin-top: 20px;
-
+.ProjectList{
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  border-top: 1px solid black;
+  padding-top: 10px;
 }
 .projectCounter{
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 100%;
+  margin: 5px;
+}
+.rowCounter{
+  display: inline-flex;
+  flex-direction: row;
+  height: 120px;
+  align-items: center;
 }
 
 /* font-family: 'Raleway Dots', cursive;

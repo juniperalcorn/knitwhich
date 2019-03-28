@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Welcome from './components/Welcome.js'
 import Navigation from './components/Navigation'
-import Dashboard from './components/Dashboard.js'
 import Tools from './components/Tools.js'
 import {Route, Link} from 'react-router-dom'
 import MyPatterns from './components/MyPatterns.js'
@@ -88,7 +87,7 @@ class App extends Component {
      return (
       <div className="App">
         <Navigation />
-        <Welcome handleSubmitFn={this.handleSubmit}/>
+        <Welcome />
 
         <main>
           <Route
@@ -97,11 +96,6 @@ class App extends Component {
           <Route 
               path='/tools' 
               component={Tools}
-          />
-          <Route 
-              path='/dashboard' 
-              render={(props)=><Dashboard {...props} 
-                patterns={this.state.patterns}/>}
           />
           <Route 
               path='/MyPatterns' 

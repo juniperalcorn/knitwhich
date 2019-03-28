@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import {Route, Link} from 'react-router-dom'
 
-class Tools extends Component {
-    render(){
+function Tools () {
         return(
             <div className='Tools'>
                 <h2>Tools</h2>
@@ -12,5 +11,4 @@ class Tools extends Component {
             </div>
         )
     }
-}
 export default Tools
