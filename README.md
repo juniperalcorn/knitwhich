@@ -53,7 +53,8 @@ Below is an example of code from the Row Counter Container component. It is sign
 -Update Project Title is what takes in the data from a new project and creates a new, labeled row counter. Input is lifted from a child component.
 -Decrease Count is a function which is passed down to children components, and allows for each counter to have a unique value while maintaining state and storage in the parent component.
 
-    async componentDidMount(){
+  ```async componentDidMount(){
+     async componentDidMount(){
         // localStorage.clear()
         let storage = localStorage.getItem('projects')
         if (storage===null){
@@ -90,4 +91,4 @@ Below is an example of code from the Row Counter Container component. It is sign
           }
         })
         localStorage.setItem('projects', JSON.stringify(this.state.projectTitles))
-      }
+      }```
