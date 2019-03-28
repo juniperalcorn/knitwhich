@@ -21,7 +21,6 @@ class Container extends Component{
             storage=JSON.parse(storage)
         }   
         await this.setState({projectTitles:storage})
-        console.log('state on load', this.state.projectTitles)
     }
     updateProjectTitle(input){
         let addProject=this.state.projectTitles
@@ -34,7 +33,6 @@ class Container extends Component{
         })
         addProject.push(projCounter[0])
         this.setState({projectTitles:addProject})
-        console.log('project titles', this.state.projectTitles)
         localStorage.setItem('projects', JSON.stringify(this.state.projectTitles))
     }
      decreaseCount(id){
