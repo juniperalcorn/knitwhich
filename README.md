@@ -24,6 +24,7 @@ View the [KnitWhich Wireframes](https://drive.google.com/file/d/1hKV2S8epQ7l7rKe
 
 #### PostMVP
 KnitWhich has incredible potential to expand, offering a seamless mobile experience of Ravelry's expansive services. 
+- Improve row counter functionality: input row number to start, remove counters.
 - Add user authorization for any Ravelry user.
 - Post new knitting needle data to API using forms. 
 
