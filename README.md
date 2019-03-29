@@ -29,15 +29,12 @@ KnitWhich has incredible potential to expand, offering a seamless mobile experie
 
 ### React Component Hierarchy
 From the App, users view the Navigation Bar and site title on every page. Through navigation, users can access a list of their Ravelry patterns, or the Tools page, where they can then select to view the measurement tool, a list of their needles, or access row counters for their projects. The Row Counter page uses three components: an input component for creating a new, labeled counter; a counter component; and a list projects component which maps through labeled counters and generates unique counters.
-App>Navigation
-        >Home
-        >My Patterns
-        >Tools  
-            >My Needles
-            >My Row Counters
-                >Form
-                >Counter
-                >List Projects
+ App>Navigation<br/>
+       >Home<br/>
+       >My Patterns<br/>
+       >Tools<br/>
+            >My Needles<br/>
+            >My Row Counters>Form>Counter>List Projects<br/>
 
 ### Functional Components
 Main functional components are My Patterns, My Needles, and Row Counting components.
