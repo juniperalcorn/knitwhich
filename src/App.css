@@ -315,13 +315,13 @@ font-family: 'Almendra Display', cursive; */
     justify-content: center;
     align-items: center;
     height: 80%;
-    margin: 50px 10% 30px 10%;
+    margin: 0 5% 30px 5%;
   }
   .cm-measurement{
     display: flex;
     align-self: center;
-    height: 10cm;
-    width: 10cm;
+    height: 5.08cm;
+    width: 5.08cm;
     background-color: grey;
     border: 1px solid black;
   }
@@ -330,11 +330,11 @@ font-family: 'Almendra Display', cursive; */
     margin-top: 9.5cm;
   }
   .cm-height{
-    margin-left: -5cm;
-    margin-top: 5cm;
+    margin-left: -5.08cm;
+    margin-top: 2.54cm;
   }
   p{
-    margin: 10px 100px;
+    margin: 10px 10px;
     text-align: justify;
   }
   .Needles{
@@ -363,13 +363,15 @@ font-family: 'Almendra Display', cursive; */
     flex-direction: column;
     justify-content: center;
     height: 80%;
-    margin: 0% 20% 0 20%;
+    margin: 0% 10% 0 10%;
     align-items: center;
     overflow: auto;
     border-top: 1px solid black;
   }
   .ProjectInput{
     margin-bottom: 20px;
+    justify-self: center;
+    margin-right: -7%;
   }
   input{
     border-radius: 15px;
@@ -377,6 +379,7 @@ font-family: 'Almendra Display', cursive; */
     font-family: 'Alegreya Sans', sans-serif;
     text-align: center;
     font-size: 12px;
+    width: 90px;
   }
   input:focus{
     background-color: lightpink;
@@ -412,6 +415,4 @@ font-family: 'Almendra Display', cursive; */
     height: 120px;
     align-items: center;
   }
-
-
 }
