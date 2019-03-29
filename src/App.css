@@ -207,3 +207,211 @@ button:focus{
 font-family: 'Megrim', cursive;
 font-family: 'Londrina Outline', cursive;
 font-family: 'Almendra Display', cursive; */
+
+@media screen and (max-width: 375px) and (min-width: 320px){
+  .App {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .Navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 5%;
+    height: 10%;
+    padding-top: 20px;
+  }
+  a{
+    text-align: center;
+    margin: 10px;
+    text-decoration: none;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 18px;
+  }
+  .Welcome{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 12%;
+    margin-bottom: 0;
+    margin-top:5%;
+  }
+  h1{
+    font-family: 'Megrim', cursive;
+    font-size: 40px;
+    margin-top:0;
+  }
+  h2{
+    font-family: 'Megrim', cursive;
+    font-size: 24px;
+  }
+  .Dashboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 50vh;
+    margin: 0 20%;
+    align-items: center;
+  }
+  .DashboardTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .MyPatterns{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+    width: 70%;
+    margin: 4% 10% 0 15%;
+    border-top: 1px solid black;
+    align-items: center;
+    overflow: auto;
+  }
+  .pattern{
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    border: 1px solid pink;
+    width: 100%;
+    margin: 2px;
+    justify-content: space-between;
+  }
+  .patternTitle{
+    margin-top: 5%;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .patternAuthor{
+    margin-top: 5%;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 16px;
+  }
+  img{
+    height: 50px;
+    object-fit: scale-down;
+    border-radius: 15px;
+  }
+  h3{
+    font-family: 'Alegreya Sans', sans-serif;
+  }
+  .Tools{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80%;
+    margin: 0% 20% 0 20%;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .measure{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    margin: 50px 10% 30px 10%;
+  }
+  .cm-measurement{
+    display: flex;
+    align-self: center;
+    height: 10cm;
+    width: 10cm;
+    background-color: grey;
+    border: 1px solid black;
+  }
+  .cm-length{
+    margin-left: 5cm;
+    margin-top: 9.5cm;
+  }
+  .cm-height{
+    margin-left: -5cm;
+    margin-top: 5cm;
+  }
+  p{
+    margin: 10px 100px;
+    text-align: justify;
+  }
+  .Needles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80%;
+    margin: 5% 20% 0 20%;
+    border-top: 1px solid black;
+    align-items: center;
+    overflow: auto;
+  }
+  .needle{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    border: 1px solid pink;
+    margin: 1px;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Alegreya Sans', sans-serif;
+  }
+  .Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80%;
+    margin: 0% 20% 0 20%;
+    align-items: center;
+    overflow: auto;
+    border-top: 1px solid black;
+  }
+  .ProjectInput{
+    margin-bottom: 20px;
+  }
+  input{
+    border-radius: 15px;
+    height: 30px;
+    font-family: 'Alegreya Sans', sans-serif;
+    text-align: center;
+    font-size: 12px;
+  }
+  input:focus{
+    background-color: lightpink;
+  }
+  button{
+    border-radius: 15px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  button:focus{
+    background-color: lightpink;
+  }
+  .ProjectList{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    border-top: 1px solid black;
+    padding-top: 10px;
+  }
+  .projectCounter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    margin: 5px;
+  }
+  .rowCounter{
+    display: inline-flex;
+    flex-direction: row;
+    height: 120px;
+    align-items: center;
+  }
+
+
+}
