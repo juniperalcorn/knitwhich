@@ -1,6 +1,5 @@
 # KnitWhich
 A Knitting Utilities and Ravelry Extension App: HTML, CSS, JSX, React.<br/>
-
 Take a look at [KnitWhich](https://knitwhich-app.herokuapp.com/).
 
 ## Project Description

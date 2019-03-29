@@ -8,8 +8,7 @@ import MyPatterns from './components/MyPatterns.js'
 import Measure from './components/Measure/Measure.js'
 import Needles from './components/Needles.js'
 import Container from './components/RowCount/Container.js'
-// import {REACT_APP_BASIC_AUTH_PASSWORD, REACT_APP_BASIC_AUTH_USERNAME} from 'dotenv'
-require('dotenv').config()
+require ('dotenv').config()
 
 const authUsername= process.env.REACT_APP_BASIC_AUTH_USERNAME
 const authPassword= process.env.REACT_APP_BASIC_AUTH_PASSWORD

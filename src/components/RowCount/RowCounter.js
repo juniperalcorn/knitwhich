@@ -6,7 +6,8 @@ class RowCounter extends Component {
         super(props)
         this.decreaseCount=this.decreaseCount.bind(this)
         this.increaseCount=this.increaseCount.bind(this)
-    }
+    }    
+
     decreaseCount(){
         this.props.decreaseFn(this.props.id)
     }
