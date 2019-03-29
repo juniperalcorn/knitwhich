@@ -9,7 +9,7 @@ Rather than attempt to mimic Ravelry's incredible functionality, KnitWhich compl
 
 From the Ravelry API, KnitWhich lists a user's Ravelry library, and lists the patterns in the "My Patterns" component. Under "Tools," Knitwhich lists a user's knitting needles, previously logged to the Ravelry website.
 
-In addition, KnitWhich offers two utilities: an accurate 10cm x 10cm ruler (accurate on mobile, tablet, and computer screens). This helps knitters to keep track of their progress or create their own ruler on the fly. There is also a Row Counters component, where users can add and label row counters for different projects, eliminating the need for easily misplaced notions.
+In addition, KnitWhich offers a Row Counters utility, where users can add and label row counters for different projects, eliminating the need for easily misplaced notions.
 
 ### Wireframes
 View the [KnitWhich Wireframes](https://drive.google.com/file/d/1hKV2S8epQ7l7rKentwiL8UDEaLZG9ixx/view?usp=sharing).
@@ -18,7 +18,6 @@ View the [KnitWhich Wireframes](https://drive.google.com/file/d/1hKV2S8epQ7l7rKe
 #### MVP 
 - Use the Ravelry API to list user's pattern library and knitting needle collection.
 - Render API data on different pages using React component structure.
-- Display an accurate 10cm measure for projects.
 - List row counters for unique projects, labeled by the user, and save accurate row count.
 
 #### PostMVP
@@ -26,6 +25,7 @@ KnitWhich has incredible potential to expand, offering a seamless mobile experie
 - Improve row counter functionality: input row number to start, remove counters.
 - Add user authorization for any Ravelry user.
 - Post new knitting needle data to API using forms. 
+- Display an accurate 10cm measure for projects.
 
 ### React Component Hierarchy
 From the App, users view the Navigation Bar and site title on every page. Through navigation, users can access a list of their Ravelry patterns, or the Tools page, where they can then select to view the measurement tool, a list of their needles, or access row counters for their projects. The Row Counter page uses three components: an input component for creating a new, labeled counter; a counter component; and a list projects component which maps through labeled counters and generates unique counters.
@@ -33,7 +33,6 @@ App>Navigation
         >Home
         >My Patterns
         >Tools  
-            >Measure
             >My Needles
             >My Row Counters
                 >Form
