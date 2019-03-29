@@ -1,5 +1,5 @@
 # KnitWhich
-A Knitting Utilities and Ravelry Extension App: HTML, CSS, JSX, React
+A Knitting Utilities and Ravelry Extension App: HTML, CSS, JSX, React.<br/>
 Take a look at [KnitWhich](https://knitwhich-app.herokuapp.com/).
 
 ## Project Description
@@ -12,16 +12,18 @@ From the Ravelry API, KnitWhich lists a user's Ravelry library, and lists the pa
 In addition, KnitWhich offers two utilities: an accurate 10cm x 10cm ruler (accurate on mobile, tablet, and computer screens). This helps knitters to keep track of their progress or create their own ruler on the fly. There is also a Row Counters component, where users can add and label row counters for different projects, eliminating the need for easily misplaced notions.
 
 ### Wireframes
+View the [KnitWhich Wireframes](https://drive.google.com/file/d/1hKV2S8epQ7l7rKentwiL8UDEaLZG9ixx/view?usp=sharing).
 
 ### MVP and PostMVP
 #### MVP 
 - Use the Ravelry API to list user's pattern library and knitting needle collection.
 - Render API data on different pages using React component structure.
 - Display an accurate 10cm measure for projects.
-- List row counters for unique projects, labeled by the user, and save accurate row count
+- List row counters for unique projects, labeled by the user, and save accurate row count.
 
 #### PostMVP
 KnitWhich has incredible potential to expand, offering a seamless mobile experience of Ravelry's expansive services. 
+- Improve row counter functionality: input row number to start, remove counters.
 - Add user authorization for any Ravelry user.
 - Post new knitting needle data to API using forms. 
 
@@ -41,26 +43,52 @@ App>Navigation
 ### Functional Components
 Main functional components are My Patterns, My Needles, and Row Counting components.
 
-### Helper Functions
-
 ### Code Snippet
-Below is an example of code from the Row Counter Container component. It is significant for demonstrating the use of local storage in creating and updating row counters. Note that local storage is set in the lower function, and called in componentDidMount. ComponentDidMount utilizes a conditional statement to make sense of the storage data for React: if nothing has been stored yet, it is set to an empty array so that the page will render without an error. If previous data is being called up, it is produced as a single string--therefore the string split method converts the stored data into an array which can be accurately mapped on the List Projects component. ComponentDidMount also contains the localstorage "clear" function as commented out--not deleted--code in case storage needs a hard reset. 
+Below is an example of code from the Row Counter Container component. It is significant for demonstrating the use of local storage in creating and updating row counters. 
 
-    componentDidMount(){
+- Local storage only accepts and generates data as string. However, my app makes use of arrays and objects to pass data. Therefore to set local storage, I used JSON.stringify, and to pull local storage, JSON.parse.
+- Calling on local storage is similar to calling an API, and the request takes time. To make sure that my state is updated and components mounted with necessary data, I implemented async/await calls on my componentDidMount function.
+- Note that if nothing has yet been stored, I use a conditional statement so storage will still have a value (an empty array as opposed to null) to allow the page to render.
+- I have kept the code for localStorage.clear, commented out, as a placeholder in case storage needs a hard reset.
+-Update Project Title is what takes in the data from a new project and creates a new, labeled row counter. Input is lifted from a child component.
+-Decrease Count is a function which is passed down to children components, and allows for each counter to have a unique value while maintaining state and storage in the parent component.
+
+  ```async componentDidMount(){
+     async componentDidMount(){
         // localStorage.clear()
-        let storage = localStorage.getItem('projectTitles')
+        let storage = localStorage.getItem('projects')
         if (storage===null){
             storage=[]
         } else {
-            let returnStorage = storage.split(',')
-            this.setState({projectTitles:returnStorage})
-        }
+            storage=JSON.parse(storage)
+        }   
+        await this.setState({projectTitles:storage})
     }
     updateProjectTitle(input){
-        let projTitle=this.state.projectTitles
-        projTitle.push(input)
-        this.setState({projectTitles:projTitle})
-        localStorage.setItem('projectTitles', this.state.projectTitles)
+        let addProject=this.state.projectTitles
+        let projArray=[input]
+        let projCounter=projArray.map(element=>{
+            const projContainer={}
+            projContainer ['title'] =element
+            projContainer['count']=0
+            return projContainer
+        })
+        addProject.push(projCounter[0])
+        this.setState({projectTitles:addProject})
+        localStorage.setItem('projects', JSON.stringify(this.state.projectTitles))
     }
-
-### User Stories
+    decreaseCount(id){
+        this.setState(prevState=>{
+          let newState = prevState.projectTitles.map((element,i)=>{
+            let newCount=element.count
+            if(i===id){
+              newCount= element.count-1
+            }
+            return {title:element.title, count:newCount}
+          })
+          return{
+            projectTitles:newState
+          }
+        })
+        localStorage.setItem('projects', JSON.stringify(this.state.projectTitles))
+      }```
