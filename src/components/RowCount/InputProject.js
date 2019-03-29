@@ -5,7 +5,6 @@ class InputProject extends Component{
         super(props)
         this.state={
             projectTitle:'',
-            counter:0,
         }
         this.handleChange=this.handleChange.bind(this)
         this.handleCreate=this.handleCreate.bind(this)

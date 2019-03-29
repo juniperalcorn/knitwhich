@@ -1,15 +1,13 @@
 import React, {Component} from 'react'
 import RowCounter from './RowCounter'
-import { timingSafeEqual } from 'crypto';
 
 class ListProjects extends Component{
     constructor(props){
         super(props)
         this.state={
-            newCount:0,
         }
         this.listProjects=this.listProjects.bind(this)
-    }
+    }    
     componentDidMount(){
         this.listProjects()
     }
