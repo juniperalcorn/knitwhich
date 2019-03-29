@@ -1,6 +1,6 @@
 # KnitWhich
 A Knitting Utilities and Ravelry Extension App: HTML, CSS, JSX, React
-Take a look at [KnitWhich] (#).
+Take a look at [KnitWhich](https://knitwhich-app.herokuapp.com/).
 
 ## Project Description
 KnitWhich is a knitting utilities app, which accesses the [Ravelry](https://ravelry.com) API. Ravelry is the world's largest site for knitting, including enormous pattern databases, social networking, business pages, and individual project management tools. 
